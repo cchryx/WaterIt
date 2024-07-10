@@ -1,0 +1,301 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link href="../style.css" rel="stylesheet" type="text/css" />
+
+        <link rel="icon" href="../assets/waterit_logo.png" type="image/png" />
+        <title>Water It</title>
+    </head>
+    <body>
+        <div class="header_container">
+            <div class="header_left">
+                <h1 class="header-logo">Water It</h1>
+                <p class="header-slogan">Your plant. Water it.</p>
+            </div>
+            <div class="header_right">
+                <ul class="header-links">
+                    <li class="header-link">
+                        <a href="../index.html">Product</a>
+                    </li>
+                    <li class="header-link">
+                        <a href="./sourcecode.html">Source Code</a>
+                    </li>
+                    <li class="header-link active">
+                        <a href="">Build</a>
+                    </li>
+                    <li class="header-link">
+                        <a href="./report.html">Report</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="body_container">
+            <div class="navbar_container">
+                <ul class="navbar-links">
+                    <li class="navbar-link">
+                        <div class="navbar-anchor_container">
+                            <a class="navbar-anchor" href="#sec-intro"
+                                >Introduction</a
+                            >
+                        </div>
+                    </li>
+                    <li class="navbar-link">
+                        <div class="navbar-anchor_container">
+                            <a class="navbar-anchor" href="#sec-model">Model</a>
+                        </div>
+                    </li>
+                    <li class="navbar-link">
+                        <div class="navbar-anchor_container">
+                            <a class="navbar-anchor" href="#sec-circuitdiagram"
+                                >Circuit Diagram</a
+                            >
+                        </div>
+                    </li>
+                    <li class="navbar-link">
+                        <div class="navbar-anchor_container">
+                            <a class="navbar-anchor" href="#sec-testing"
+                                >Testing</a
+                            >
+                        </div>
+                    </li>
+                    <li class="navbar-link">
+                        <div class="navbar-anchor_container">
+                            <a class="navbar-anchor" href="#sec-product"
+                                >Product</a
+                            >
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content_container">
+                <div class="section_container" id="sec-intro">
+                    <div class="box_container">
+                        <img
+                            class="box-image"
+                            src="https://media.discordapp.net/attachments/1109192890460160020/1116057763815108688/20230607_133434.jpg?width=458&height=612"
+                            alt=""
+                        />
+                        <div class="text_container">
+                            <div class="typewriter">
+                                <h2>Build Introduction</h2>
+                            </div>
+                            <p>
+                                Note that all of the parts we used in our build
+                                is recycled and reused to be placed in our
+                                product, keeping an evironmental friendly image.
+                                Our build is made with two "+" shaped supports
+                                connected by 2 metal beams to hold them
+                                together. Next we have a circlular ring attached
+                                to the top, holding a cup shaped piece with a
+                                hole on the bottom. We then cut off the top of a
+                                water bottle and placed in the cup shaped piece,
+                                which wil serve as the water source. Finally we
+                                will have some tubing, which one end is
+                                connected to the lid of the water bottle through
+                                the hole on the cup shaped piece. The other end
+                                is attached to the servo and as the water source
+                                is higher than the end on the servo, the water
+                                will flow downwards and directed to the plant.
+                            </p>
+                            <br />
+                            <b>
+                                The circuit parts of our product include the
+                                following:
+                            </b>
+                            <br />
+                            <p>
+                                Micro:bit - The Micro:bit is the brain of our
+                                product. The Micro:bit decides when to water the
+                                plant from the measurement of the Sensor:bit.
+                            </p>
+                            <p>
+                                Sensor:bit - The Sensor:bit measures the
+                                conductivity of the soil. The soil becomes
+                                conductive when there is more moisture.
+                            </p>
+                            <p>
+                                2 X AAA Battery - We power the Micro:bit using 2
+                                AAA batteries which provide a total of 3V of
+                                power (1.5V per one).
+                            </p>
+                            <p>
+                                4 X AA Battery - We power the servo motor with 4
+                                AA batteries which provide a total of 6V of
+                                power (1.5V per one).
+                            </p>
+                            <p>
+                                Servos Motor - The servo motor consumes 4-6v of
+                                power. We connected it to another battery for it
+                                to work as the Micro:bit could only output 3V.
+                            </p>
+                            <p>
+                                Wires - Jumper and normal wires to connect all
+                                of our components in a circuit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_container" id="sec-model">
+                    <div class="box_container" style="flex-direction: column">
+                        <div class="text_container">
+                            <h2>Model of Smart Plant Managing Device</h2>
+                        </div>
+                        <iframe
+                            width="725"
+                            height="453"
+                            src="https://www.tinkercad.com/embed/iAyzI8JaOzz?editbtn=1"
+                            frameborder="0"
+                            marginwidth="0"
+                            marginheight="0"
+                            scrolling="no"
+                        ></iframe>
+                    </div>
+                    <div class="box_container" style="flex-direction: column">
+                        <div class="text_container">
+                            <h2>
+                                Original Model of Smart Plant Managing Device
+                            </h2>
+                        </div>
+                        <iframe
+                            width="725"
+                            height="453"
+                            src="https://www.tinkercad.com/embed/6H9xocXfZ8C?editbtn=1"
+                            frameborder="0"
+                            marginwidth="0"
+                            marginheight="0"
+                            scrolling="no"
+                        ></iframe>
+                        <br />
+                    </div>
+                </div>
+                <div class="section_container" id="sec-circuitdiagram">
+                    <div class="box_container" style="flex-direction: column">
+                        <div class="text_container">
+                            <h2>
+                                Circuit Diagram of Smart Plant Managing Device
+                            </h2>
+                            <p>
+                                Our product consists of four main components as
+                                displayed in this circuit. The Mirco:bit is the
+                                brain of the system and is connected to the
+                                servo and the moisture sensor. The Micro Bit
+                                reads moisture levels from the moisture sensor
+                                to determine when the plant needed to be
+                                watered, and it will turn the servo accordingly.
+                                The sensor uses Pin 1 and Pin 2 of the Micro Bit
+                                while the servo uses Pin 16. The Micro Bit is
+                                powered by a 9 volt battery pack and the servo
+                                is powered by a 6 volt battery pack.
+                            </p>
+                        </div>
+                        <img
+                            src="https://media.discordapp.net/attachments/1109192890460160020/1117888258689474560/Screenshot_2023-06-12_2.48.31_PM.png?width=1097&height=570"
+                            alt=""
+                        />
+                    </div>
+                </div>
+                <div class="section_container" id="sec-testing">
+                    <div class="box_container">
+                        <div class="text_container" style="margin-right: 25px">
+                            <h2>Testing Moisture Sensor</h2>
+                            <br />
+                            <div
+                                style="
+                                    position: relative;
+                                    height: calc(200px + 5em);
+                                    width: 500px;
+                                    overflow: hidden;
+                                "
+                            >
+                                <iframe
+                                    style="
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                    "
+                                    src="https://makecode.microbit.org/---codeembed#pub:_Djh79WC2Aeac"
+                                    allowfullscreen="allowfullscreen"
+                                    frameborder="0"
+                                    sandbox="allow-scripts allow-same-origin"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <iframe
+                            width="560"
+                            height="350"
+                            src="https://www.youtube.com/embed/s3UOJaDa7Vo"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                    <div class="box_container">
+                        <div class="text_container" style="margin-right: 25px">
+                            <h2>Testing Servos</h2>
+                            <br />
+                            <div
+                                style="
+                                    position: relative;
+                                    height: calc(200px + 5em);
+                                    width: 400px;
+                                    overflow: hidden;
+                                "
+                            >
+                                <iframe
+                                    style="
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                    "
+                                    src="https://makecode.microbit.org/---codeembed#pub:_Yr18540dPRRy"
+                                    allowfullscreen="allowfullscreen"
+                                    frameborder="0"
+                                    sandbox="allow-scripts allow-same-origin"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <iframe
+                            width="560"
+                            height="350"
+                            src="https://www.youtube.com/embed/L2X32v0gNi4"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="section_container" id="sec-product">
+                    <div class="box_container" style="flex-direction: column">
+                        <div class="text_container">
+                            <h2>Finished Producted Testing</h2>
+                        </div>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/yP68ukfVcGk"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        ></iframe>
+                        <br />
+                        <img
+                            src="https://media.discordapp.net/attachments/1109192890460160020/1119355059617148948/20230616_151411.jpg?width=458&height=612"
+                            alt=""
+                        />
+                    </div>
+                </div>
+                <div class="footer_container"></div>
+            </div>
+        </div>
+    </body>
+</html>

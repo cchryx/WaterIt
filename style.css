@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(219, 219, 219);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.typewriter h2 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+code {
+    font-family: Consolas, "courier new";
+    color: rgb(13, 168, 88);
+    background-color: #f1f1f1;
+    padding: 2px;
+    font-size: 90%;
+    font-weight: 600;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+
+.header_container {
+    background: rgb(86, 127, 165);
+    background: linear-gradient(
+        90deg,
+        rgba(86, 127, 165, 1) 0%,
+        rgba(161, 188, 177, 1) 35%,
+        rgba(166, 176, 172, 1) 100%
+    );
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    left: 0;
+    top: 0;
+    max-height: 10vh;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.header-logo {
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+.header-slogan {
+    font-size: 1rem;
+}
+
+.header_left {
+    flex: 6;
+}
+
+.header_right {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.header-link {
+    margin: 20px;
+    font-size: 1.1rem;
+    padding: 15px;
+}
+
+.header-link:hover {
+    cursor: pointer;
+    border-bottom: solid 3px rgb(218, 218, 218);
+    background-color: rgba(164, 202, 255, 0.474);
+}
+
+.header-link.active {
+    border-bottom: solid 3px rgb(255, 255, 255);
+}
+
+.body_container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+    height: 90vh;
+}
+
+.navbar_container {
+    background: rgb(234, 234, 234);
+    background: linear-gradient(
+        180deg,
+        rgba(182, 188, 196, 1) 65%,
+        rgba(158, 184, 219, 1) 100%
+    );
+    width: 175px;
+    overflow: hidden;
+    padding: 40px 40px 40px 30px;
+
+    animation: 0.5s ease-out 0s 1 slideInFromLeft;
+}
+
+.navbar-links {
+    list-style: none;
+}
+
+.navbar-link {
+    background-color: #a5a9b0;
+    font-size: 1rem;
+    font-weight: 600;
+    border-left: solid 3px rgb(0, 0, 0);
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.navbar-link:hover {
+    /* cursor: pointer; */
+    border-left: solid 3px rgb(255, 255, 255);
+    background-color: rgba(164, 202, 255, 0.474);
+}
+
+.navbar-anchor_container {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-anchor {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.content_container {
+    flex: 1;
+    overflow: scroll;
+}
+
+.section_container {
+    min-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-behavior: smooth;
+    flex-direction: column;
+}
+
+.box_container {
+    display: flex;
+    flex-direction: row;
+    max-width: 75%;
+    height: fit-content;
+    background: rgb(234, 234, 234);
+
+    padding: 35px;
+    margin: 25px;
+
+    -moz-transition: opacity 1.5s;
+    -webkit-transition: opacity 1.5s;
+    -o-transition: opacity 1.5s;
+    transition: opacity 1.5s;
+
+    animation: 1.5s ease-out 0s 1 fadeIn;
+}
+
+.box-image {
+    max-width: 250px;
+    margin: 25px;
+    object-fit: cover;
+}
+
+.text_container {
+    overflow: hidden;
+    margin: 10px;
+}
+
+.text-link {
+    text-decoration: underline;
+    color: rgb(91, 146, 91);
+}
+
+.footer_container {
+    margin-top: 50px;
+}
+
+.sourcecode_container {
+    font-family: Consolas, "courier new";
+    padding: 30px;
+    overflow-wrap: break-word;
+    color: rgb(13, 168, 88);
+    background-color: #f1f1f1;
+    font-weight: 600;
+}

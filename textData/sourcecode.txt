@@ -1,0 +1,97 @@
+// lower brightness to save power
+led.setBrightness(64)
+
+// declaration and assignment of variable
+let reading = 0 
+let time = 1
+let wateringTime = 5
+let select = false
+let manual = false
+let auto = true
+
+// press button A + B to toggle between manual and auto mode
+input.onButtonPressed(Button.AB, function () {
+    basic.clearScreen() // clear screen
+    select = false // change select variable to false
+    if (select == false) { // if select is false, toggle mode
+        if (auto == true) { // if auto is true, toggle mode to manual
+            manual = true // set manual variable to true
+            auto = false // set auto variable to false
+            basic.showString("manual") // show string "manual"
+        } else if (auto == false) { // if auto is false, toggle mode to auto
+            auto = true // set auto variable to true
+            manual = false // set manual variable to false
+            basic.showString("auto") // show string "auto"
+        }
+    }
+})
+
+// press A to either show moisture reading or change manual time interval
+input.onButtonPressed(Button.A, function () {
+    if (select == true) { // if select is true
+        time += -1 // decrease time variable by 1
+    } else { // else 
+        basic.showNumber(reading) // show moisture level reading
+    }
+})
+
+// press button B to either show temperature or change manual time interval
+input.onButtonPressed(Button.B, function () {
+    if (select == true) { // if select is true
+        time += 1 // increase time variable by 1
+    } else { // else 
+        basic.showNumber(input.temperature()) // show temperature 
+    }
+})
+
+// press logo to create a pending input to set manual time interval
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.clearScreen() // clear screen
+    select = true // change select variable to true
+    basic.showString("set time") // show string "set time"
+    while (select == true) { // while in selection mode, continue waiting for responses
+        if (time < 1) { // if time is lower than 1
+            time = 1 // set time variable to 1
+            basic.showNumber(1) // show number 1
+        } else { // else 
+            basic.showNumber(time) // show time
+        }
+    }
+})
+
+// forever function to handle the automatic and manual watering
+basic.forever(function () {
+    if (select == false) { // check if user is in selection
+        // plot graph to show relative moisture level
+        led.plotBarGraph(
+        reading,
+        1023
+        )
+
+        if (auto == true) { // if auto is true
+            basic.clearScreen() // clear screen
+            pins.analogWritePin(AnalogPin.P2, 1023) // write pin 2 to 1023
+            reading = pins.analogReadPin(AnalogPin.P1) // set reading to what is read from pin 1
+            pins.analogWritePin(AnalogPin.P2, 0) // write pin 2 to 0
+
+            // plot graph to show relative moisture level
+            led.plotBarGraph(
+            reading,
+            1023
+            )
+
+            if (reading < 700) { // if reading is less than 700
+                pins.servoWritePin(AnalogPin.P8, 110) // write pin 8 to 110
+                control.waitMicros(wateringTime * 1000000) // wait wateringTime multiplied to seconds
+                pins.servoWritePin(AnalogPin.P8, 0) // write pin 8 to 0
+            }
+            basic.pause(5000) // pause 5s
+        }
+        if (manual == true) { // if manual is true
+            control.waitMicros(time * 10000000) // wait manual time interval 
+            pins.servoWritePin(AnalogPin.P8, 110) // write pin 8 to 110
+            control.waitMicros(wateringTime * 1000000) // wait wateringTime multiplied to seconds
+            pins.servoWritePin(AnalogPin.P8, 0) // write pin 8 to 0
+        }
+    }
+})
